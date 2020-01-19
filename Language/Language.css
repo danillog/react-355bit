@@ -1,0 +1,16 @@
+.box{
+  background:black;
+
+
+}
+img{
+  
+  background: black;
+  width: 250px;
+
+  
+}
+
+@media only screen and (max-width: 1024px){
+
+}
