@@ -1,16 +1,26 @@
-.box{
-  background:black;
-
-
-}
-img{
-  
+body{
   background: black;
-  width: 250px;
+}
 
-  
+.logo{
+
+  width: 250px; 
+}
+.country{
+  margin-bottom: 20px;
+}
+h2,h1{
+  color: white;
+}
+h1{
+  margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 1024px){
-
+  h1{
+    margin-bottom: 30px;
+  }
+  .country{
+  margin-bottom: 5px;
+}
 }
