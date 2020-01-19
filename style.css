@@ -1,7 +1,7 @@
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 
 body{
-  background: #333;
+  background: rgb(17, 17, 17);
 }
 h1, p {
   font-family: Lato;
