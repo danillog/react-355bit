@@ -1,12 +1,17 @@
-body{
+.linha{
+  margin-top: 10%;
+}
+.box{
   background: black;
 }
 
 .logo{
-
-  width: 250px; 
+  background: black;
+  width: 400px; 
 }
+
 .country{
+  background: black;
   margin-bottom: 20px;
 }
 h2,h1{
@@ -17,10 +22,16 @@ h1{
 }
 
 @media only screen and (max-width: 1024px){
+  .logo{
+    width: 300px;
+  }
   h1{
     margin-bottom: 30px;
   }
   .country{
-  margin-bottom: 5px;
-}
+    margin-bottom: 5px;
+  }
+  .linha{
+    margin-top: 0;
+  }
 }
