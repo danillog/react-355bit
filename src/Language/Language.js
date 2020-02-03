@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logo from "../image/Logost4.png";
 import "./Language.css";
 
 class Language extends Component {
@@ -7,11 +8,8 @@ class Language extends Component {
       <div>
         <div class="linha row align-items-center">
           <div class="box col mx-auto text-center">
-            <img
-              class="logo"
-              src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/91436790925937.5e24891fa5818.png"
-            />
-            <h1> Enter your language </ h1>
+            <img class="logo" src={Logo}/>
+            <h1> Enter in your language </ h1>
           </div>
         </div>
         <div class="row space align-items-center">
