@@ -2,20 +2,20 @@
   margin-top: 10%;
 }
 .box{
-  background: black;
+  background: rgb(168, 168, 168);
 }
 
 .logo{
-  background: black;
+  background: rgba(221, 221, 221, 0);
   width: 400px; 
 }
 
 .country{
-  background: black;
+  background: rgb(199, 199, 199);
   margin-bottom: 20px;
 }
 h2,h1{
-  color: white;
+  color: black;
 }
 h1{
   margin-bottom: 100px;
