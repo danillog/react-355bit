@@ -1,22 +1,29 @@
 .linha{
   margin-top: 10%;
 }
-.box{
-  background: rgb(168, 168, 168);
+.box-main{
+  background-color: white;
+  box-shadow: 35px 42px 48px 0 #d2d2d2;
 }
 
-.logo{
-  background: rgba(221, 221, 221, 0);
-  width: 400px; 
+.box-logo img{
+  width: 458px;
+  margin: -63px auto;
 }
 
-.country{
-  background: rgb(199, 199, 199);
-  margin-bottom: 20px;
+.box-language{
+  margin-bottom: 127px;
 }
+
+.box-language:hover{
+  box-shadow: 13px 17px 20px 0px #80808080;
+}
+
 h2,h1{
   color: black;
+  font-family: 'Bebas Neue' cursive;
 }
+
 h1{
   margin-bottom: 100px;
 }
