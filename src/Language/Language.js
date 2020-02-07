@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Logo from "../image/Logos.png";
 import "./Language.css";
 
 class Language extends Component {
@@ -8,7 +7,7 @@ class Language extends Component {
       <div class="box-main container">
         <div class="linha row align-items-center">
           <div class="box-logo col mx-auto text-center">
-            <img class="logo" src={Logo}/>
+            <img class="logo" src="https://raw.githubusercontent.com/danillog/react-355bit/master/src/image/Logos.png"/>
           </div>
         </div>
         <div class="row space align-items-center">
