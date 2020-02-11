@@ -1,0 +1,11 @@
+.footerP p{
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.jumbotron footer{
+    box-shadow: 6px 5px 125px 0px #cecece;
+    background-color: whitesmoke;
+  }
