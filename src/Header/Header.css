@@ -1,49 +1,67 @@
-.jumbotron{
+
+@media screen and (min-width:1300px){  
+  .jumbotron{
     box-shadow: 6px 5px 125px 0px #cecece;
     background-color: whitesmoke;
   }
   .box-logo img{
-    width: 458px;
-    margin: -166px 0 -224px 0;
-    /* position: absolute;
-    left: 0;
-    top: -202px; */
+    width: 300px;
   }
-  
-  .box-language1{
-    border-radius: 50px;
-    background-image: url(https://www.countryflags.io/us/shiny/64.png);
+  .country{
+    margin-bottom: 5px;
+  }
+  .linha{
+    margin-top: 0;
+  }
+
+  .box-language1 img{
     position: absolute;
-    top: 0;
-    left: 107px;
-    width: 92px;
-    height: 83px;
-    background-repeat: no-repeat;
-    background-position: center;
+    left: 782px;
+    bottom: 10px;
+    width: 42px;
+  }
+
+  .box-language2 img{
+    position: absolute;
+    left: 517px;
+    bottom: 10px;
+    width: 42px;
+  }
+  .box-language3 img{
+    position: absolute;
+    left: 251px;
+    bottom: 10px;
+    width: 42px;
+  }
 }
 
-.box-language2{
-  border-radius: 50px;
-  background-image: url(https://www.countryflags.io/es/shiny/64.png);
-  position: absolute;
-  top: 0;
-  left: 61px;
-  width: 92px;
-  height: 83px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.box-language3{
-  border-radius: 50px;
-  background-image: url(https://www.countryflags.io/br/shiny/64.png);
-  position: absolute;
-  top: 0;
-  left: 13px;
-  width: 92px;
-  height: 83px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  .jumbotron{
+    box-shadow: 6px 5px 125px 0px #cecece;
+    background-color: whitesmoke;
+  }
+  .box-logo img{
+    width: 300px;
+  }
+  
+  .box-language1 img{
+    position: absolute;
+    left: 142%;
+    bottom: 10px;
+    width: 66px;
+  }
+
+  .box-language2 img{
+    position: absolute;
+    left: 96%;
+    bottom: 10px;
+    width: 66px;
+  }
+  .box-language3 img{
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 66px;
+  }
   
   .box-language:hover{
     box-shadow: 13px 17px 20px 0px #80808080;
@@ -56,19 +74,4 @@
   
   h1{
     margin-bottom: 100px;
-  }
-  
-  @media only screen and (max-width: 1024px){
-    .logo{
-      width: 300px;
-    }
-    h1{
-      margin-bottom: 30px;
-    }
-    .country{
-      margin-bottom: 5px;
-    }
-    .linha{
-      margin-top: 0;
-    }
   }
