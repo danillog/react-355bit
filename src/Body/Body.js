@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Chart from '../Chart/Chart';
 import "./Body.css";
 
 class Body extends Component {
@@ -6,10 +7,10 @@ class Body extends Component {
     return (
       <div>
 
-        <div className="container texto1">
+        <div className="container texto1 grafico">
           <div className="row">
               <div className="col">
-                  <charView  />
+                <Chart />
               </div>
           </div>
         </div>
