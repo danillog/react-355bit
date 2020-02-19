@@ -5,13 +5,15 @@ class Body extends Component {
   render() {
     return (
       <div>
+
         <div className="container texto1">
           <div className="row">
               <div className="col">
-                  <h2> Lucre de forma rápida e inteligente com mercado financeiro.</h2>
+                  <charView  />
               </div>
           </div>
         </div>
+       
         <div className="container texto1">
           <div className="row">
               <div className="col">

@@ -1,3 +1,62 @@
+.jumbotron{
+  box-shadow: 6px 5px 125px 0px #cecece;
+  background-color: whitesmoke;
+}
+.box-logo img{
+  width: 300px;
+}
+
+.box-language1 img{
+  position: absolute;
+  left: 142%;
+  bottom: 10px;
+  width: 66px;
+}
+
+.box-language2 img{
+  position: absolute;
+  left: 96%;
+  bottom: 10px;
+  width: 66px;
+}
+.box-language3 img{
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  width: 66px;
+}
+
+.box-language:hover{
+  box-shadow: 13px 17px 20px 0px #80808080;
+}
+
+h2,h1{
+  color: black;
+  font-family: 'Bebas Neue' cursive;
+}
+
+h1{
+  margin-bottom: 100px;
+}
+
+.image{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../image/Dubai.jpg);
+  transition: 500ms;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.text-box h2{
+  color: white;
+  text-shadow: 10px 5px 13px #bfbfbf7a;
+}
+
 
 @media screen and (min-width:1300px){  
   .jumbotron{
@@ -7,6 +66,8 @@
   .box-logo img{
     width: 300px;
   }
+
+
   .country{
     margin-bottom: 5px;
   }
@@ -35,43 +96,6 @@
   }
 }
 
-  .jumbotron{
-    box-shadow: 6px 5px 125px 0px #cecece;
-    background-color: whitesmoke;
-  }
-  .box-logo img{
-    width: 300px;
-  }
-  
-  .box-language1 img{
-    position: absolute;
-    left: 142%;
-    bottom: 10px;
-    width: 66px;
-  }
 
-  .box-language2 img{
-    position: absolute;
-    left: 96%;
-    bottom: 10px;
-    width: 66px;
-  }
-  .box-language3 img{
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    width: 66px;
-  }
   
-  .box-language:hover{
-    box-shadow: 13px 17px 20px 0px #80808080;
-  }
   
-  h2,h1{
-    color: black;
-    font-family: 'Bebas Neue' cursive;
-  }
-  
-  h1{
-    margin-bottom: 100px;
-  }
