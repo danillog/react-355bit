@@ -7,7 +7,7 @@ class Body extends Component {
     return (
       <div>
 
-        <div className="container texto1 grafico">
+        <div className="container jumbotron texto1 grafico">
           <div className="row">
               <div className="col">
                 <Chart />

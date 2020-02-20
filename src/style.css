@@ -14,11 +14,11 @@ h2 {
   font-weight: 400;
 }
 
-a, p, li{
+a, p, li,select,option{
   font-family: 'Teko';
   font-size: 60px;
   text-align: center;
-  font-weight: 300;
+  font-weight: 450;
 }
 a{
   color: black;
@@ -32,42 +32,63 @@ a:hover{
   background-color: white;
   position: sticky;
   width: auto;
-  height: 100px;
+  height: 200px;
   top: 1px;
   z-index: 100;
   box-shadow: 13px 12px 11px 0px #8080803b;
 }
 
 .box-logo img{
-  width: 300px;
-  margin-top: 21px;
+  width: 450px;
+  margin-top: 12%;
 }
-
-.box-language1 img{
+.seletor{
+  height: 81px;
+  width: 154px;
+  font-size: 58px;
+  text-align: center;
   bottom: 10px;
-  width: 50px;
+  margin: 0 0 9px 0;
+
+}
+.sel{
+  bottom: 25%;
+}
+.links{
+  bottom: 25%;
+  left: 3%;
+}
+.login{
+  bottom: 25%;
+  left: 5%;
 }
 
-.box-language2 img{
-  bottom: 10px;
-  width: 50px;
-}
-.box-language3 img{
-
-  bottom: 10px;
-  width: 50px;
-}
-
-.box-language:hover{
-  box-shadow: 13px 17px 20px 0px #80808080;
-}
-
-@media screen and (min-width:1300px){  
+@media screen and (min-width:1300px){ 
+  .row-color{
+    background-color: white;
+    position: sticky;
+    width: auto;
+    height: 100px;
+    top: 1px;
+    z-index: 100;
+    box-shadow: 13px 12px 11px 0px #8080803b;
+  }
+  a, p, li,select,option{
+    font-family: 'Teko';
+    font-size: 60px;
+    text-align: center;
+    font-weight: 300;
+  } 
   .box-logo img{
     width: 300px;
     margin-top: 21px;
   }
-
+  .login{
+    left: 74px;
+  }
+  .links{
+    left: 88px;
+  }
 
   .box-language1 img{
     bottom: 10px;
@@ -82,6 +103,7 @@ a:hover{
     bottom: 10px;
     width: 42px;
   }
+
 }
 
 
