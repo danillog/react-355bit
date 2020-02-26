@@ -32,15 +32,15 @@ a:hover{
   background-color: white;
   position: sticky;
   width: auto;
-  height: 200px;
-  top: 1px;
+  height: 150px;
+  top: 0;
   z-index: 100;
   box-shadow: 13px 12px 11px 0px #8080803b;
 }
 
 .box-logo img{
-  width: 450px;
-  margin-top: 12%;
+  width: 325px;
+  margin-top: 7%;
 }
 .seletor{
   height: 81px;
@@ -55,21 +55,37 @@ a:hover{
   bottom: 25%;
 }
 .links{
-  bottom: 25%;
-  left: 3%;
+  bottom: 27%;
+  left: 2%;
 }
 .login{
-  bottom: 25%;
-  left: 5%;
+  bottom: 27%;
+  left: 3%;
 }
 
-@media screen and (min-width:1300px){ 
+.box-language1 img{
+  width: 50px;
+  left: 24%;
+  bottom: 63px;
+}
+.box-language2 img{
+  width: 50px;
+  bottom: 63px;
+  left: 86%;
+}
+.box-language3 img{
+  width: 50px;
+  left: 149%;
+  bottom: 63px;
+}
+
+@media screen and (min-width:2048px){ 
   .row-color{
     background-color: white;
     position: sticky;
     width: auto;
     height: 100px;
-    top: 1px;
+    top: 0px;
     z-index: 100;
     box-shadow: 13px 12px 11px 0px #8080803b;
   }
@@ -81,7 +97,7 @@ a:hover{
   } 
   .box-logo img{
     width: 300px;
-    margin-top: 21px;
+    margin-top: 12%;
   }
   .login{
     left: 74px;
@@ -91,15 +107,18 @@ a:hover{
   }
 
   .box-language1 img{
-    bottom: 10px;
-    width: 42px;
+    position: absolute;
+    width: 50px;
+    bottom: 42px
   }
 
   .box-language2 img{
-    bottom: 10px;
+    position: absolute;
     width: 42px;
+    bottom: 75px;
   }
   .box-language3 img{
+    position: absolute;
     bottom: 10px;
     width: 42px;
   }

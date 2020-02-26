@@ -21,20 +21,13 @@ class App extends Component {
               <img alt ="Logo" src={logo} />
           </div>
           <div class="col-2 align-self-end links">
-            <a>Registrar</a>
+            <a href="#!">Registrar</a>
           </div>
           <div class="col-2 align-self-end login">
-            <a>Login</a>
+            <a href="#!">Login</a>
           </div>
-          <div class="col-2 align-self-end sel">    
-            <select className= " form-control form-control-sm seletor" id="idiomas">
-              <option disabled selected>Idioma</option>
-              <option value="Eng">English</option>
-              <option value="Esp">Español</option>
-              <option value="Pt">Português</option>
-            </select>
-          </div>
-            {/* <div class="col align-self-end box-language1">
+          <div className="row language">
+            <div class="col align-self-end box-language1">
                 <img alt="English" src="https://www.countryflags.io/us/shiny/64.png"/>
             </div>
             <div class="col align-self-end box-language2">
@@ -42,9 +35,10 @@ class App extends Component {
             </div>
             <div class="col align-self-end box-language3">
                 <img alt="Português" src="https://www.countryflags.io/br/shiny/64.png"/>
-            </div> */}
+            </div>
+          </div>
         </div>
-        <Header/>
+        <Header />
          <Body />
         <Footer />
       </div>

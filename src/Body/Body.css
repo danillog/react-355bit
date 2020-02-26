@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
 .texto1{
     margin-top: 200px;
     background-color: white;
@@ -10,14 +11,90 @@ h2,  p{
 
 span{
     color: #e8d858;
-    text-shadow: -1px -1px 2px #bfb144
-}
-
-.doisCol p{
-    padding: 0;
-    margin: 0;
 }
 
 .grafico{
     padding: 10px;
+    background-color: white;
+}
+
+.operando img{
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 13px 12px 11px 0px rgba(99, 99, 99, 0.527);
+}
+
+.operandoTxt{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.operandoTxt p{
+    font-size: 30px;
+    padding: 0;
+    font-family: 'Oswald';
+}
+.operandoTxt h2{
+    padding: 0;
+    font-size: 60px;
+}
+.chartTxt{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.chartTxt p{
+     font-size: 30px;
+     padding: 0;
+}
+
+.tituloV{
+    padding: 0;
+}
+.vantagens p{
+    font-size: 25px;
+    padding: 0; 
+}
+
+.icons-vantagens{
+    color: #e8d858;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 56px;
+    border: solid 1px;
+    box-shadow: 3px 2px 8px 0px #929292;
+}
+
+.imgS{
+    background-image: url(../image/Trabalhando.jpg) ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.txtS h2{
+   text-shadow:  black 3px 3px 6px;
+   color: white;
+}
+.iconS{
+    color: #e8d858;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 56px;
+    border: solid 1px;
+    box-shadow: 3px 2px 8px 0px #929292;
+}
+.doisColR{
+    margin-top: 20px;
+}
+.doisCol h5{
+    font-size: 42px;
+    font-family: 'Teko';
+}
+.doisCol p{
+    padding: 0;
+    font-size: 25px;
+    font-family: 'Oswald';
+}
+.doisCol{
+    margin-bottom: 30px;
 }

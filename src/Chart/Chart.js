@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import ReactApexChart from "react-apexcharts";
 
@@ -6,7 +7,7 @@ class ApexChart extends React.Component {
     super(props);
 
     this.state = {
-    
+      person: {},
       series: [{
         data: [{
             x: new Date(1538778600000),
@@ -250,13 +251,14 @@ class ApexChart extends React.Component {
           },
         ]
       }],
+      
       options: {
         chart: {
           type: 'candlestick',
           height: 350
         },
         title: {
-          text: 'CandleStick Chart',
+          text: 'Bitcoin para Real',
           align: 'left'
         },
         xaxis: {
@@ -266,22 +268,51 @@ class ApexChart extends React.Component {
           tooltip: {
             enabled: true
           }
-        }
+        },
+        responsive: [{
+          breakpoint: undefined,
+          options: {},
+      }]
       },
     
     
     };
   }
 
+  componentDidMount() {
+    axios.get(`http://www.mocky.io/v2/5a5e38f3330000b0261923a5`)
+      .then(res => {
+       if (res) {
+          const person = res.data;
+          this.setState({ person });
+          console.log(this.state.person);
+        }
+      })
+  }
+
 
 
   render() {
+    console.log(this.state.person)
     return (
       
 
-<div id="chart">
-<ReactApexChart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
-</div>
+    <div className="container-fluid">
+      <div className="row align-items-star ">
+        <div className="col-12">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" class="btn btn-secondary btn-light btn-lg">Bitcoin</button>
+            <button type="button" class="btn btn-secondary btn-light btn-lg">Etherium</button>
+            <button type="button" class="btn btn-secondary btn-light btn-lg">Litecoin</button>
+          </div>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col" id="chart">
+          <ReactApexChart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
+        </div>
+      </div>
+    </div>
 
     );
   }

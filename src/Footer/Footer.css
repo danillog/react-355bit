@@ -1,11 +1,26 @@
-.footerP p{
-    font-size: 30px;
+footer a{
+    font-size: 20px;
     padding: 0;
     margin: 0;
     text-align: center;
+}
+footer h5{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.footerP p{
+    font-size: 30px;
 }
 
 .jumbotron footer{
     box-shadow: 6px 5px 125px 0px #cecece;
     background-color: whitesmoke;
-  }
+}
+
+footer{
+    margin-top: 200px;
+    background-color: white;
+    box-shadow: 13px 12px 11px 0px #8080803b;
+}
