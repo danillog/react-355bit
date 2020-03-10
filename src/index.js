@@ -26,16 +26,29 @@ class App extends Component {
           <div class="col-2 align-self-end login">
             <a href="#!">Login</a>
           </div>
+
+          <div class="dropdown">
+            <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Idiomas
+            </button>
+            <div class="dropdown-menu">
+              <div class=" dropdown-item">
+                  <icon alt="English" src="https://www.countryflags.io/us/shiny/64.png"/>
+                  <a href="#!">Inglês</a>
+              </div>
+              <div class=" dropdown-item">
+                  <icon alt="Español"src="https://www.countryflags.io/es/shiny/64.png" />
+                  <a href="#!">Espanhol</a>
+              </div>
+              <div class=" dropdown-item">
+                  <icon alt="Português" src="https://www.countryflags.io/br/shiny/64.png"/>
+                  <a href="#!">Português</a>
+              </div>
+            </div>
+          </div>
+          
           <div className="row language">
-            <div class="col align-self-end box-language1">
-                <img alt="English" src="https://www.countryflags.io/us/shiny/64.png"/>
-            </div>
-            <div class="col align-self-end box-language2">
-                <img alt="Español"src="https://www.countryflags.io/es/shiny/64.png" />
-            </div>
-            <div class="col align-self-end box-language3">
-                <img alt="Português" src="https://www.countryflags.io/br/shiny/64.png"/>
-            </div>
+           
           </div>
         </div>
         <Header />

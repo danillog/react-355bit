@@ -6,8 +6,20 @@ import ChartGame from '../chartGame/chartGame';
 import operando from "../image/operand.jpg";
 import "./Body.css";
 
-
 class Body extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      clique: 0
+    }
+  };
+    clicado(){
+      this.setState({
+        clique:1
+      })
+    };
+
   render() {
     return (
       <div>
@@ -43,11 +55,11 @@ class Body extends Component {
         <div className="container-fluid chart texto1">
           <div className="row">
               <div className="col-9">
-                <ChartGame />
+                <ChartGame myclick={ this.state.clique } />
               </div>
               <div className="col-3 chartTxt">
                 <p> O gráfico irá subir ou descer? </p>
-                <button type="button" class="btn btn-success btn-lg btn-block"> Vai Subir </button>
+                <button type="button" class="btn btn-success btn-lg btn-block" onClick={this.clicado}> Vai Subir </button>
                 <button type="button" class="btn btn-danger btn-lg btn-block"> Vai Descer </button>
               </div>
           </div>
