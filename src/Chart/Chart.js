@@ -41,27 +41,46 @@ class ApexChart extends React.Component {
     
     };
   }
-
   pegaValores() {
     let valor = [];
-    axios.get(`https://economia.awesomeapi.com.br/json/list/BTC-BRL/30`)
+    
+    axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=${ this.props.myLanguage }&days=30`)
+      .then(res => {
+        const value = res.data;
+        console.log(value)
+        this.setState({ value });
+        // let time = value.map(dia => (dia.create_date));
+        // let high = value.map( dia => (dia.ask));
+      //   for(let i = 0; i< 30; i++){
+      //     valor.push(
+      //       {
+      //         x: new Date(value[i][0]),
+      //         y: [value[i][1]]
+      //       }
+      //     )
+      //   }
+      })
+      
+      return valor;
+  }
+
+  mudaValores(moeda) {
+    let valor = [];
+    
+    axios.get(`https://api.coingecko.com/api/v3/coins/${moeda}/market_chart?vs_currency=${ this.props.myLanguage }&days=30`)
       .then(res => {
         const value = res.data;
         this.setState({ value });
-        let time = value.map(dia => (dia.create_date));
-        let open = value.map(dia => parseFloat(dia.bid));
-        let high = value.map( dia => parseFloat(dia.high));
-        let low = value.map( dia => parseFloat(dia.low));
-        let bid = value.map( dia => parseFloat(dia.ask));
         for(let i = 0; i< 30; i++){
           valor.push(
             {
-              x: new Date(time[i]),
-              y: [open[i], high[i], low[i], bid[i]]
+              x: new Date(value[i][0]),
+              y: [value[i][1]]
             }
           )
         }
       })
+      console.log(valor.push)
       return valor;
   }
 
@@ -76,8 +95,12 @@ class ApexChart extends React.Component {
       <div className="row align-items-star ">
         <div className="col-12">
           <div className="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" className="btn btn-secondary btn-light btn-lg">Bitcoin</button>
-            <button type="button" className="btn btn-secondary btn-light btn-lg">Etherium</button>
+            <button type="button" className="btn btn-secondary btn-light btn-lg" 
+              onClick = { () => this.mudaValores("bitcoin") }
+            >Bitcoin</button>
+            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            onClick = { () => this.mudaValores("ethereum") }
+            >Ethereum</button>
             <button type="button" className="btn btn-secondary btn-light btn-lg">Litecoin</button>
           </div>
         </div>
