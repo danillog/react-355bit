@@ -30,18 +30,12 @@ class ApexChart extends React.Component {
             enabled: true
           }
         },
-        theme: {
-          palette: 'palette1'
-        },
-        responsive: [{
-          breakpoint: undefined,
-          options: {},
-      }]
       },
     
     
     };
-  }conso
+  }
+  
   pegaValores() {
     let valor = [];
     
@@ -59,24 +53,25 @@ class ApexChart extends React.Component {
         let lastValue;
         let control = 0;
         for(let i = 0; i <= valueData.length; i++){
-          if( isSameDay( new Date(valueData[i][0]), days)){
+          let dateVerify = new Date(valueData[i][0])
+          if(isSameDay(dateVerify, days)){
             firstHour = startOfHour(startOfDay(days));
             lastHour = endOfHour(endOfDay(days)); 
             if(isSameHour(days, firstHour)){
-              firstValue = valueData[i][1]
+              firstValue = parseFloat(valueData[i][1].toFixed(2))
               control++
             }
             
             if(isSameHour(days, lastHour)){
-              lastValue = valueData[i][1]
+              lastValue = parseFloat(valueData[i][1].toFixed(2))
               control++
             }
 
             if(lowValue <= valueData[i][1]){
-              lowValue = valueData[i][1]
+              lowValue = parseFloat(valueData[i][1].toFixed(2))
             }
             if(highValue >= valueData[i][1]){
-              highValue = valueData[i][1]
+              highValue = parseFloat(valueData[i][1].toFixed(2))
             }
             if(control === 2){
               valor.push(
@@ -114,20 +109,20 @@ class ApexChart extends React.Component {
             firstHour = startOfHour(startOfDay(days));
             lastHour = endOfHour(endOfDay(days)); 
             if(isSameHour(days, firstHour)){
-              firstValue = valueData[i][1].toFixed(1)
+              firstValue = parseFloat(valueData[i][1].toFixed(2))
               control++
             }
             
             if(isSameHour(days, lastHour)){
-              lastValue = valueData[i][1].toFixed(1)
+              lastValue = parseFloat(valueData[i][1].toFixed(2))
               control++
             }
 
             if(lowValue <= valueData[i][1]){
-              lowValue = valueData[i][1].toFixed(1)
+              lowValue = parseFloat(valueData[i][1].toFixed(2))
             }
             if(highValue >= valueData[i][1]){
-              highValue = valueData[i][1].toFixed(1)
+              highValue = parseFloat(valueData[i][1].toFixed(2))
             }
             if(control === 2){
               valor.push(
@@ -147,9 +142,10 @@ class ApexChart extends React.Component {
           data: valor
         }],
       })
-      return valor;
   }
   render() {
+    console.log("Dados de chart")
+    console.log(this.state.series)
     return (
     <div className="container-fluid">
       <div className="row align-items-star ">

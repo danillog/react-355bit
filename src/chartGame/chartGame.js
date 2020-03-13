@@ -17,7 +17,7 @@ class ApexChart extends React.Component {
           height: 350
         },
         title: {
-          text: 'Bitcoin para Real',
+          text: '',
           align: 'left'
         },
         xaxis: {
@@ -44,11 +44,9 @@ class ApexChart extends React.Component {
 
   
   render() {
-    console.log("Normal");
-    console.log(this.state.series);
+    console.log("Dados da tabela Game")
+    console.log(this.state.series)
     return (
-      
-
     <div className="container-fluid">
       <div className="row">
         <div className="col" id="chart">
@@ -57,7 +55,6 @@ class ApexChart extends React.Component {
         </div>
       </div>
     </div>
-
     );
   }
 }

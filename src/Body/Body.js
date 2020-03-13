@@ -11,7 +11,7 @@ class Body extends Component {
     super(props);
 
     this.state = {
-      language: "usd",
+      language: "brl",
       mensagem: "Você pode acertar para onde o valor irá?",
       data: [{
           x: new Date(1538778600000),
@@ -331,8 +331,8 @@ class Body extends Component {
               </div>
               <div className="col-3 chartTxt">
                 <p> O gráfico irá subir ou descer? </p>
-                <button type="button" class="btn btn-success btn-lg btn-block" onClick={() => this.updateChartGame(1)}> Vai Subir </button>
-                <button type="button" class="btn btn-danger btn-lg btn-block" onClick={() => this.updateChartGame(2)}> Vai Descer </button>
+                <button type="button" className="btn btn-success btn-lg btn-block" onClick={() => this.updateChartGame(1)}> Vai Subir </button>
+                <button type="button" className="btn btn-danger btn-lg btn-block" onClick={() => this.updateChartGame(2)}> Vai Descer </button>
               </div>
           </div>
         </div>
