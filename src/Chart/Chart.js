@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { addHours, endOfDay, endOfHour, isSameDay, isSameHour, startOfDay, startOfHour } from 'date-fns';
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
 
@@ -18,7 +19,7 @@ class ApexChart extends React.Component {
           height: 350
         },
         title: {
-          text: 'Bitcoin para Real',
+          text: '',
           align: 'left'
         },
         xaxis: {
@@ -40,57 +41,116 @@ class ApexChart extends React.Component {
     
     
     };
-  }
+  }conso
   pegaValores() {
     let valor = [];
     
     axios.get(`https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=${ this.props.myLanguage }&days=30`)
       .then(res => {
         const value = res.data;
-        console.log(value)
         this.setState({ value });
-        // let time = value.map(dia => (dia.create_date));
-        // let high = value.map( dia => (dia.ask));
-      //   for(let i = 0; i< 30; i++){
-      //     valor.push(
-      //       {
-      //         x: new Date(value[i][0]),
-      //         y: [value[i][1]]
-      //       }
-      //     )
-      //   }
+        let valueData = value.prices
+        let days = new Date(valueData[0][0]);
+        let firstHour;
+        let lastHour;
+        let firstValue;
+        let lowValue = valueData[1][1];
+        let highValue = valueData[1][1];
+        let lastValue;
+        let control = 0;
+        for(let i = 0; i <= valueData.length; i++){
+          if( isSameDay( new Date(valueData[i][0]), days)){
+            firstHour = startOfHour(startOfDay(days));
+            lastHour = endOfHour(endOfDay(days)); 
+            if(isSameHour(days, firstHour)){
+              firstValue = valueData[i][1]
+              control++
+            }
+            
+            if(isSameHour(days, lastHour)){
+              lastValue = valueData[i][1]
+              control++
+            }
+
+            if(lowValue <= valueData[i][1]){
+              lowValue = valueData[i][1]
+            }
+            if(highValue >= valueData[i][1]){
+              highValue = valueData[i][1]
+            }
+            if(control === 2){
+              valor.push(
+                {
+                  x: new Date(valueData[i][0]),
+                  y: [firstValue, highValue, lowValue, lastValue]
+                }
+              )
+              control = 0;
+            }
+          }
+          days = addHours(days, 1)
+        }
       })
-      
       return valor;
   }
 
   mudaValores(moeda) {
     let valor = [];
-    
     axios.get(`https://api.coingecko.com/api/v3/coins/${moeda}/market_chart?vs_currency=${ this.props.myLanguage }&days=30`)
       .then(res => {
         const value = res.data;
         this.setState({ value });
-        for(let i = 0; i< 30; i++){
-          valor.push(
-            {
-              x: new Date(value[i][0]),
-              y: [value[i][1]]
+        let valueData = value.prices
+        let days = new Date(valueData[0][0]);
+        let firstHour;
+        let lastHour;
+        let firstValue;
+        let lowValue = valueData[1][1];
+        let highValue = valueData[1][1];
+        let lastValue;
+        let control = 0;
+        for(let i = 0; i <= valueData.length; i++){
+          if( isSameDay( new Date(valueData[i][0]), days)){
+            firstHour = startOfHour(startOfDay(days));
+            lastHour = endOfHour(endOfDay(days)); 
+            if(isSameHour(days, firstHour)){
+              firstValue = valueData[i][1].toFixed(1)
+              control++
             }
-          )
+            
+            if(isSameHour(days, lastHour)){
+              lastValue = valueData[i][1].toFixed(1)
+              control++
+            }
+
+            if(lowValue <= valueData[i][1]){
+              lowValue = valueData[i][1].toFixed(1)
+            }
+            if(highValue >= valueData[i][1]){
+              highValue = valueData[i][1].toFixed(1)
+            }
+            if(control === 2){
+              valor.push(
+                {
+                  x: new Date(valueData[i][0]),
+                  y: [firstValue, highValue, lowValue, lastValue]
+                }
+              )
+              control = 0;
+            }
+          }
+          days = addHours(days, 1)
         }
       })
-      console.log(valor.push)
+      this.setState({
+        series:[{
+          data: valor
+        }],
+      })
       return valor;
   }
-
-
-
   render() {
-    console.log(this.state.series)
     return (
-      
-
     <div className="container-fluid">
       <div className="row align-items-star ">
         <div className="col-12">
@@ -101,7 +161,12 @@ class ApexChart extends React.Component {
             <button type="button" className="btn btn-secondary btn-light btn-lg"
             onClick = { () => this.mudaValores("ethereum") }
             >Ethereum</button>
-            <button type="button" className="btn btn-secondary btn-light btn-lg">Litecoin</button>
+            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            onClick = { () => this.mudaValores("litecoin")}
+            >Litecoin</button>
+            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            onClick = { () => this.mudaValores("zcash")}
+            >Zcash</button>
           </div>
         </div>
       </div>

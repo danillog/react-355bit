@@ -44,6 +44,8 @@ class ApexChart extends React.Component {
 
   
   render() {
+    console.log("Normal");
+    console.log(this.state.series);
     return (
       
 

@@ -16,7 +16,7 @@ h2 {
 
 a, p, li,select,option{
   font-family: 'Teko';
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
   font-weight: 450;
 }
@@ -32,7 +32,7 @@ a:hover{
   background-color: white;
   position: sticky;
   width: auto;
-  height: 150px;
+  height: 127px;
   top: 0;
   z-index: 100;
   box-shadow: 13px 12px 11px 0px #8080803b;
@@ -61,6 +61,14 @@ a:hover{
 .login{
   bottom: 27%;
   left: 3%;
+}
+.dropdown{
+  top: 20%;
+  font-family: teko;
+}
+
+.dropdown button{
+  font-size: 40px;
 }
 
 .box-language1 img{
