@@ -1,0 +1,10 @@
+.btn{
+    box-shadow: 3px 4px 5px 0 #b7b7b7;
+}
+
+#btn-show{
+    display: none;
+}
+#textChange{
+    font-family: 'teko';
+}
