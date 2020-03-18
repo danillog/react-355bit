@@ -412,7 +412,10 @@ class ApexChart extends React.Component {
             ] }]
         });
         document.getElementById("btn-show").style.display = "block";
-        document.getElementById("textChange").style.color = "#26c161";
+        document.getElementById("textChange").style.backgroundColor = "#26c16129";
+        document.getElementById("textChange").classList.add("change")
+        document.getElementById("btnLos").style.display = "none"
+        
         break;
       case 2:
         this.setState({
@@ -661,7 +664,9 @@ class ApexChart extends React.Component {
             ] }]
         });
         document.getElementById("btn-show").style.display = "block";
-        document.getElementById("textChange").style.color = "#f15c59";
+        document.getElementById("textChange").style.backgroundColor = "#dc35451f";
+        document.getElementById("textChange").classList.add("change");
+        document.getElementById("btnWin").style.display = "none"
         break;
       case 3:
         this.setState({
@@ -806,6 +811,10 @@ class ApexChart extends React.Component {
         })
         document.getElementById("btn-show").style.display = "none";
         document.getElementById("textChange").style.color = "black";
+        document.getElementById("textChange").style.backgroundColor = "#fff"
+        document.getElementById("textChange").classList.remove("change")
+        document.getElementById("btnWin").style.display = "block"
+        document.getElementById("btnLos").style.display = "block"
         break;
       default:
         break;  
@@ -819,13 +828,16 @@ class ApexChart extends React.Component {
     <div className="container-fluid">
       <div className="row">
         <div className="col-9">
-          <h3 id="textChange"> {this.state.mensagem} </h3>
-          <ReactApexChart options={this.state.options} series={this.state.series} type="candlestick" height={350} />
+          <div id="textChange">
+            <h3> {this.state.mensagem} </h3>
+          
+          <ReactApexChart options={this.state.options} series={this.state.series} type="candlestick" height={350} id="chartGame"/>
+          </div>
         </div>
         <div className="col-3 chartTxt">
           <p> O gráfico irá subir ou descer? </p>
-          <button type="button" className="btn btn-success btn-lg btn-block" onClick={() => this.game(1)}> Vai Subir </button>
-          <button type="button" className="btn btn-danger btn-lg btn-block" onClick={() => this.game(2)}> Vai Descer </button>
+          <button type="button" id="btnWin" className="btn btn-success btn-lg btn-block" onClick={() => this.game(1)}> Vai Subir </button>
+          <button type="button" id="btnLos" className="btn btn-danger btn-lg btn-block" onClick={() => this.game(2)}> Vai Descer </button>
           <button type="button" id="btn-show" className="btn btn-lg btn-block" onClick={() => this.game(3)}> Tentar Novamente </button>
         </div>
       </div>

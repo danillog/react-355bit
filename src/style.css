@@ -63,8 +63,9 @@ a:hover{
   left: 3%;
 }
 .dropdown{
-  top: 20%;
+  top: 30%;
   font-family: teko;
+  width: 14%;
 }
 
 .dropdown button{

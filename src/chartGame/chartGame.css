@@ -8,3 +8,12 @@
 #textChange{
     font-family: 'teko';
 }
+
+.change{
+    z-index: 7;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    border-radius: 3px;
+    transition: 2s;
+}

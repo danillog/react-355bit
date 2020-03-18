@@ -11,6 +11,12 @@ class ApexChart extends React.Component {
     if(moeda === undefined){
       moeda = 'bitcoin'
     }
+    if(this.state){
+      let oldButton = document.getElementById(this.state.moeda)
+      oldButton.classList.remove("active")
+      let newButton = document.getElementById(moeda);
+      newButton.classList.add("active")
+    }
     axios
       .get(
         `https://api.coingecko.com/api/v3/coins/${ moeda }/market_chart?vs_currency=${
@@ -63,7 +69,7 @@ class ApexChart extends React.Component {
         });
 
         this.setState({
-          moeda: "bitcoin",
+          moeda: moeda,
           value: {},
           series: [{ data: data }],
           options: {
@@ -85,16 +91,16 @@ class ApexChart extends React.Component {
       <div className="row align-items-star ">
         <div className="col-12">
           <div className="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" className="btn btn-secondary btn-light btn-lg" 
+            <button type="button" id="bitcoin" className="btn btn-secondary btn-light btn-lg active" 
               onClick = { () => this.pegaValores("bitcoin") }
             >Bitcoin</button>
-            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            <button type="button" id="ethereum" className="btn btn-secondary btn-light btn-lg"
             onClick = { () => this.pegaValores("ethereum") }
             >Ethereum</button>
-            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            <button type="button" id="litecoin" className="btn btn-secondary btn-light btn-lg"
             onClick = { () => this.pegaValores("litecoin")}
             >Litecoin</button>
-            <button type="button" className="btn btn-secondary btn-light btn-lg"
+            <button type="button" id="zcash" className="btn btn-secondary btn-light btn-lg"
             onClick = { () => this.pegaValores("zcash")}
             >Zcash</button>
           </div>

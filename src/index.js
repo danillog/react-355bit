@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import Select from 'react-select';
 import Body from './Body/Body';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
@@ -9,9 +10,15 @@ import './style.css';
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      value: "select",
+      options : [
+      { value: 'English', label: 'English' },
+      { value: 'Espanol', label: 'Español' },
+      { value: 'Portugues', label: 'Português' }
+    ]
+    };
   }
-
 
   render() {
     return (
@@ -26,26 +33,12 @@ class App extends Component {
           <div className="col-2 align-self-end login">
             <a href="#!">Login</a>
           </div>
-
-          <div className="dropdown">
-            <button className="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Idiomas
-            </button>
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">  
-              <a href="#!" className=" dropdown-item">
-                <img alt="English" src="https://www.countryflags.io/us/shiny/64.png"/>
-                Inglês
-              </a>
-              <a href="#!" className=" dropdown-item">
-                <img alt="Español"src="https://www.countryflags.io/es/shiny/64.png" />
-                Espanhol
-              </a>
-              <a href="#!" className=" dropdown-item">
-                <img alt="Português" src="https://www.countryflags.io/br/shiny/64.png"/>
-                Português
-              </a>
-            </div>
-          </div>
+          {/* <select id="lang" onChange={this.change} value={this.state.value}>
+            <option value="select">Select</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+          </select> */}
+          <Select className="dropdown" isSearchable="false" options={this.state.options} placeholder="Select the lenguage"/>
         </div>
         <Header />
         <Body />
