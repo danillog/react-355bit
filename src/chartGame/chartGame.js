@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactApexChart from "react-apexcharts";
+import i18n from "../i18n";
 import './chartGame.css';
+
 
 class ApexChart extends React.Component {
   constructor(props) {
     super(props);
     //this.game();
     this.state = {
-      mensagem: "Você pode acertar para onde o valor irá?",
+      mensagem: "",
       
           value: {},
           series: [{ data: [{
@@ -167,7 +169,8 @@ class ApexChart extends React.Component {
         break;
       case 1:
         this.setState({
-          mensagem: "Você acertou !!!",
+          //props
+          mensagem: i18n.t("gameGanhou"),
           series: [{ data: [
             {
               x: new Date(1538778600000),
@@ -419,7 +422,7 @@ class ApexChart extends React.Component {
         break;
       case 2:
         this.setState({
-          mensagem: "Você Errou !!!",
+          mensagem: i18n.t("gamePerdeu"),
           series: [{ data: [
             {
               x: new Date(1538778600000),
@@ -670,7 +673,7 @@ class ApexChart extends React.Component {
         break;
       case 3:
         this.setState({
-          mensagem: "Você pode acertar para onde o valor irá?",
+          mensagem: "",
           series: [{ data: [{
             x: new Date(1538778600000),
             y: [6629.81, 6650.5, 6623.04, 6633.33]
@@ -823,7 +826,7 @@ class ApexChart extends React.Component {
 
   render() {
     if (!this.state)
-      return (<div>Carregando...</div>);
+      return (<div>Loading...</div>);
     return (
     <div className="container-fluid">
       <div className="row">
@@ -835,10 +838,10 @@ class ApexChart extends React.Component {
           </div>
         </div>
         <div className="col-3 chartTxt">
-          <p> O gráfico irá subir ou descer? </p>
-          <button type="button" id="btnWin" className="btn btn-success btn-lg btn-block" onClick={() => this.game(1)}> Vai Subir </button>
-          <button type="button" id="btnLos" className="btn btn-danger btn-lg btn-block" onClick={() => this.game(2)}> Vai Descer </button>
-          <button type="button" id="btn-show" className="btn btn-lg btn-block" onClick={() => this.game(3)}> Tentar Novamente </button>
+          <p> {i18n.t("gamePer")} </p>
+          <button type="button" id="btnWin" className="btn btn-success btn-lg btn-block" onClick={() => this.game(1)}> {i18n.t("gameSubir")}</button>
+          <button type="button" id="btnLos" className="btn btn-danger btn-lg btn-block" onClick={() => this.game(2)}> {i18n.t("gameDescer")} </button>
+          <button type="button" id="btn-show" className="btn btn-lg btn-block" onClick={() => this.game(3)}> {i18n.t("gameOutra")} </button>
         </div>
       </div>
     </div>

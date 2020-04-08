@@ -11,6 +11,7 @@ class ApexChart extends React.Component {
     if(moeda === undefined){
       moeda = 'bitcoin'
     }
+    const din = 'usd'
     if(this.state){
       let oldButton = document.getElementById(this.state.moeda)
       oldButton.classList.remove("active")
@@ -19,9 +20,8 @@ class ApexChart extends React.Component {
     }
     axios
       .get(
-        `https://api.coingecko.com/api/v3/coins/${ moeda }/market_chart?vs_currency=${
-          this.props.myLanguage
-        }&days=90`
+        `https://api.coingecko.com/api/v3/coins/${ moeda }/market_chart?vs_currency=${din}&days=90`
+        
       )
       .then(res => {
         const colecao = res.data.prices;
